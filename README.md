@@ -3,7 +3,8 @@ Mobile-API for [PokerArena](https://play.google.com/store/apps/details?id=air.ru
 
 ## Example
 ```python
-import poker_arena
-poker_arena = poker_arena.PokerArena()
-poker_arena.login(email="", password="")
+from poker_arena import PokerArena
+
+poker_arena = PokerArena()
+poker_arena.login(email="example@gmail.com", password="password")
 ```
