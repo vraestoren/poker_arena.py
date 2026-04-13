@@ -184,7 +184,7 @@ class PokerArena:
 			picture: str = None) -> dict:
 		data = {
 			"_token_": self.token,
-			"version": self.version         
+			"version": self.version
 		}
 		if nickname:
 			data["name"] = nickname
