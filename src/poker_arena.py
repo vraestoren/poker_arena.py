@@ -42,7 +42,7 @@ class PokerArena:
 			"version": self.version
 		}
 		data["_token_"] = token if token else None
-		response = self._post("/extinit/poker", data=data).json()
+		response = self._post("/extinit/poker", data=data)
 		if "id" in response["user"]:
 			self.user_id = response["user"]["id"]
 			self.token = response["user"]["web_token"]
@@ -61,7 +61,7 @@ class PokerArena:
 			"ident": "Poker",
 			"version": self.version
 		}
-		response = self._post("/rest/auth", data=data).json()
+		response = self._post("/rest/auth", data=data)
 		if "token" in response:
 			self.token = response["token"]
 			self.user_id = self.extinit_poker(self.token)["user"]["id"]
@@ -93,14 +93,14 @@ class PokerArena:
 			"pic": "https://minigames.imgsmail.ru/static/i/profile/avatars/mouse.jpg",
 			"bonus": 1
 		}
-		return self._post("/rest/register", data=data).json()
+		return self._post("/rest/register", data=data)
 	
 	def get_room_list(self) -> dict:
 		params = {
 			"version": self.version
 		}
 		return self._get(
-			"/game/Poker/roomlist", params).json()
+			"/game/Poker/roomlist", params)
 
 	def udid_bind(self) -> dict:
 		data = {
@@ -109,7 +109,7 @@ class PokerArena:
 			"udid": self.udid
 		}
 		return self._post(
-			"/n/udid/bind", data=data).json()
+			"/n/udid/bind", data=data)
 
 	def get_state(self) -> dict:
 		data = {
@@ -119,7 +119,7 @@ class PokerArena:
 			"object": "hilo_mobile"
 		}
 		return self._post(
-			"/index.php", data=data).json()
+			"/index.php", data=data)
 
 	def play_hilo_mobile(
 			self,
@@ -147,7 +147,7 @@ class PokerArena:
 			data["pay_with_hilocs"] = pay_with_hilocs
 			data["pay"] = 1
 		return self._post(
-			"/index.php", data=data).json()
+			"/index.php", data=data)
 
 	def get_user_info(self, user_id: int) -> dict:
 		data = {
@@ -158,7 +158,7 @@ class PokerArena:
 			"version": self.version
 		}
 		return self._post(
-			f"/user/{user_id}/info", data=data).json()
+			f"/user/{user_id}/info", data=data)
 
 	def get_user_achievements(self, user_id: int) -> dict:
 		data = {
@@ -169,14 +169,14 @@ class PokerArena:
 			"version": self.version 
 		}
 		return self._post(
-			"/achievement/get/user_achievement", data=data).json()
+			"/achievement/get/user_achievement", data=data)
 
 	def get_gifts_list(self) -> dict:
 		params = {
 			"_token_": self.token,
 			"version": self.version
 		}
-		return self._get("/gift/list", params).json()
+		return self._get("/gift/list", params)
 
 	def edit_profile(
 			self,
@@ -191,7 +191,7 @@ class PokerArena:
 		if picture:
 			data["pic"] = picture
 		return self._post(
-			"/profile/edit", data=data).json()
+			"/profile/edit", data=data)
 
 	def get_top_players(
 			self,
@@ -205,7 +205,7 @@ class PokerArena:
 			"version": self.version
 		}
 		return self._post(
-			"/game/Poker/top", data=data).json()
+			"/game/Poker/top", data=data)
 
 	def get_tournament_players(self, type: int = 1) -> dict:
 		data = {
@@ -216,4 +216,4 @@ class PokerArena:
 			"get_top": type
 		}
 		return self._post(
-			"/index.php", data=data).json()
+			"/index.php", data=data)
