@@ -1,6 +1,6 @@
 # <img src="https://play-lh.googleusercontent.com/SJwgFdT5PABc2SQyiN5oB7bndxFTJ6oq5J5rfXoLqm6kkhB13jZXe6N66unpzgcTBo2B=w240-h480-rw" width="28" style="vertical-align:middle;" /> poker_arena.py
 
-> Mobile-API for [Poker Arena](https://adrminipoker_arenas.mail.ru) a mobile poker poker_arena by Mail.ru.
+> Mobile-API for [Poker Arena](https://adrminipoker_arenas.mail.ru) a mobile poker game by Mail.ru.
 
 ## Quick Start
 
